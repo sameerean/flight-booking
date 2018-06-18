@@ -1,4 +1,4 @@
-package com.dxbair.services.flightbooking;
+package com.dxbair.services.flightbooking.test;
 
 public enum ApiUrls {
 	BookingURL("/bookings/"),

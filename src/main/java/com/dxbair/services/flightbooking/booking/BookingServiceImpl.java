@@ -35,7 +35,7 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public FlightBooking getBooking(String bookingId) {
-		return bookingRepo.findById(bookingId).orElse(new FlightBooking());
+		return bookingRepo.findById(bookingId).orElseThrow(() -> new BookingNotFoundException(bookingId));
 	}
 
 	@Override
@@ -74,14 +74,14 @@ public class BookingServiceImpl implements BookingService {
 
 	private void createRandomBooking(Passenger passenger, Random flightSelector) {
 		String flightID = "FL-" + (flightSelector.nextInt(19) + 1);
-		logger.info(">>>>>>>>>>>>>>> FL-ID = " + flightID);
+		logger.debug(">>>>>>>>>>>>>>> FL-ID = " + flightID);
 		Flight flight = flightRepo.findById(flightID).orElse(null);
-		logger.info(">>>>>>>>>>>>>>>>>> Flight = " + flight);
+		logger.debug(">>>>>>>>>>>>>>>>>> Flight = " + flight);
 
 		List<Flight> nextFlights = flightRepo.findByDepartureAndDepartureDateGreaterThan(flight.getArrival(),
 				flight.getArrivalDate());
 		Flight nextFlight = CollectionUtils.isEmpty(nextFlights) ? null : nextFlights.get(0);
-		logger.info(" CCCCCCCCCCCC >>>>>>>>>>>>>>>>>> nextFlight = " + nextFlight);
+		logger.debug(" CCCCCCCCCCCC >>>>>>>>>>>>>>>>>> nextFlight = " + nextFlight);
 
 		FlightBooking booking = new FlightBooking();
 		booking.setPassenger(passenger);

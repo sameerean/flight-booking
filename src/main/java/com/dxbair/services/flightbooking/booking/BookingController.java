@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dxbair.services.flightbooking.booking.model.FlightBookingModel;
-import com.dxbair.services.flightbooking.booking.model.FlightBookingModelMinimal;
+import com.dxbair.services.flightbooking.booking.model.FlightBookingSummaryModel;
 import com.dxbair.services.flightbooking.booking.model.converter.ToFlightBookingModelConverter;
-import com.dxbair.services.flightbooking.booking.model.converter.ToFlightBookingModelMinimalConverter;
 import com.dxbair.services.flightbooking.domain.entity.Flight;
 import com.dxbair.services.flightbooking.domain.entity.FlightBooking;
 
@@ -34,9 +33,6 @@ public class BookingController {
 	@Autowired
 	private ToFlightBookingModelConverter toBookingModelConverter;
 
-	@Autowired
-	private ToFlightBookingModelMinimalConverter toBookingModelMinConverter;
-
 	@GetMapping("/{bookingId}")
 	public @ResponseBody FlightBookingModel getBookingById(@PathVariable String bookingId) {
 
@@ -45,7 +41,7 @@ public class BookingController {
 	}
 
 	@GetMapping
-	public @ResponseBody List<FlightBookingModelMinimal> getBookingByPassengerId(
+	public @ResponseBody List<FlightBookingSummaryModel> getBookingByPassengerId(
 			@RequestParam("uid") String passengerId) {
 
 		logger.info("Finding booking by passengerId ... " + passengerId);
@@ -54,9 +50,9 @@ public class BookingController {
 		if (CollectionUtils.isEmpty(bookings)) {
 			return Collections.emptyList();
 		} else {
-			List<FlightBookingModelMinimal> bookingModels = new ArrayList<>(bookings.size());
+			List<FlightBookingSummaryModel> bookingModels = new ArrayList<>(bookings.size());
 			bookings.stream().forEach(booking -> {
-				bookingModels.add(new FlightBookingModelMinimal(booking.getId(), booking.getPassenger().getLastName(),
+				bookingModels.add(new FlightBookingSummaryModel(booking.getId(), booking.getPassenger().getLastName(),
 						((Flight) booking.getFlights().toArray()[0]).getDeparture()));
 			});
 			return bookingModels;

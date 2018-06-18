@@ -77,7 +77,7 @@ public class DataLoader {
 
 	public static void loadFromCsv(ResourceLoader resourceLoader, String sourceCsvFile,
 			Function<String[], Object> objectMapper, CrudRepository repo) {
-		logger.info("++++++++++++++ Loading " + sourceCsvFile + " ..........");
+		logger.debug("++++++++++++++ Loading " + sourceCsvFile + " ..........");
 
 		Resource resource = resourceLoader.getResource("classpath:" + sourceCsvFile);
 
@@ -96,7 +96,7 @@ public class DataLoader {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		logger.info("++++++++++++++ Loading " + sourceCsvFile + " DONE !");
+		logger.debug("++++++++++++++ Loading " + sourceCsvFile + " DONE !");
 
 	}
 

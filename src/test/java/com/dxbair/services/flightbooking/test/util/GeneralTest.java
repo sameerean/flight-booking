@@ -1,4 +1,4 @@
-package com.dxbair.services.test.util;
+package com.dxbair.services.flightbooking.test.util;
 
 import java.util.Random;
 

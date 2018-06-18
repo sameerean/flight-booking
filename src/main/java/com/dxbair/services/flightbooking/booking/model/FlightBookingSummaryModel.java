@@ -1,12 +1,16 @@
 package com.dxbair.services.flightbooking.booking.model;
 
-public class FlightBookingModelMinimal {
+public class FlightBookingSummaryModel {
 
 	private String bookingId;
 	private String lastName;
 	private String departure;
 
-	public FlightBookingModelMinimal(String bookingId, String lastName, String departure) {
+	public FlightBookingSummaryModel() {
+		super();
+	}
+
+	public FlightBookingSummaryModel(String bookingId, String lastName, String departure) {
 		super();
 		this.bookingId = bookingId;
 		this.lastName = lastName;

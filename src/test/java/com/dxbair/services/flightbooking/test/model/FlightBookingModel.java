@@ -1,4 +1,4 @@
-package com.dxbair.services.flightbooking.booking.model;
+package com.dxbair.services.flightbooking.test.model;
 
 import java.util.List;
 
@@ -7,13 +7,6 @@ public class FlightBookingModel {
 	private String id;
 	private PassengerModel passenger;
 	private List<FlightModel> flights;
-
-	public FlightBookingModel(String id, PassengerModel passenger, List<FlightModel> flights) {
-		super();
-		this.id = id;
-		this.passenger = passenger;
-		this.flights = flights;
-	}
 
 	public String getId() {
 		return id;
@@ -37,6 +30,11 @@ public class FlightBookingModel {
 
 	public void setFlights(List<FlightModel> flights) {
 		this.flights = flights;
+	}
+
+	@Override
+	public String toString() {
+		return "FlightBookingModel [id=" + id + ", passenger=" + passenger + ", flights=" + flights + "]";
 	}
 
 }
