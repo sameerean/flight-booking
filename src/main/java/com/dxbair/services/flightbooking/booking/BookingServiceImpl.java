@@ -40,7 +40,10 @@ public class BookingServiceImpl implements BookingService {
 
 	@Override
 	public List<FlightBooking> getAllBookingsByPassenger(String passengerId) {
-		return bookingRepo.findByPassengerId(passengerId);
+		List<FlightBooking> bookings = bookingRepo.findByPassengerId(passengerId);
+		if (CollectionUtils.isEmpty(bookings))
+			throw new BookingNotFoundForPassengerException(passengerId);
+		return bookings;
 	}
 
 	@Override

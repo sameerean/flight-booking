@@ -17,7 +17,7 @@ public class ToFlightBookingModelConverter implements Converter<FlightBooking, F
 
 	@Override
 	public FlightBookingModel convert(FlightBooking source) {
-
+		
 		List<FlightModel> flights = new ArrayList<>();
 
 		if (!CollectionUtils.isEmpty(source.getFlights())) {

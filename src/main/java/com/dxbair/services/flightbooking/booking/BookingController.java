@@ -1,13 +1,11 @@
 package com.dxbair.services.flightbooking.booking;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,16 +45,12 @@ public class BookingController {
 		logger.info("Finding booking by passengerId ... " + passengerId);
 
 		List<FlightBooking> bookings = bookingService.getAllBookingsByPassenger(passengerId);
-		if (CollectionUtils.isEmpty(bookings)) {
-			return Collections.emptyList();
-		} else {
-			List<FlightBookingSummaryModel> bookingModels = new ArrayList<>(bookings.size());
-			bookings.stream().forEach(booking -> {
-				bookingModels.add(new FlightBookingSummaryModel(booking.getId(), booking.getPassenger().getLastName(),
-						((Flight) booking.getFlights().toArray()[0]).getDeparture()));
-			});
-			return bookingModels;
-		}
+		List<FlightBookingSummaryModel> bookingModels = new ArrayList<>(bookings.size());
+		bookings.stream().forEach(booking -> {
+			bookingModels.add(new FlightBookingSummaryModel(booking.getId(), booking.getPassenger().getLastName(),
+					((Flight) booking.getFlights().toArray()[0]).getDeparture()));
+		});
+		return bookingModels;
 	}
 
 }
