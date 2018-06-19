@@ -81,7 +81,9 @@ mvn test
 
 - Your IDE
 
+
 	Right click on this file and "Run As JUnit Testcase"  
+
 
 ## Database
 
