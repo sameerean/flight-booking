@@ -17,7 +17,7 @@ Besides these two primary end-points, there are few other end-points to support 
 5. GET /passengers
 6. GET /passengers/{passenger-id}
 
-To test these end-points, see the API documentation section [here](#api-doc)
+To test these end-points, see the API documentation section [here](#api-documentation-and-integration-testing)
 
 ## Getting Started
 
@@ -46,7 +46,7 @@ The source code can be checked out to your local and then build and run the appl
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
     12. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
 
-### <a name="api-doc">API Documentation and Integration Testing</a> 
+### <a name="api-documentation-and-integration-testing"></a>API Documentation and Integration Testing 
 
 API documentation can be accessed via [Swagger UI](http://localhost:8080/swagger-ui.html) 
 
