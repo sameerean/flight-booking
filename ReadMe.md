@@ -19,6 +19,14 @@ Besides these two primary end-points, there are few other end-points to support 
 
 To test these end-points, see the API documentation section [here](#markdown-header-api-documentation-and-integration-testing)
 
+## Technologies used
+
+1. Java (Programming Language)
+2. Spring Boot (Application Platform)
+3. Spring Data JPA (Data persistence)
+4. H2 (Database)
+5. JUnit, with Spring Testing (Unit & Integration Testing)
+
 ## Getting Started
 
 The source code can be checked out to your local and then build and run the application either from your IDE after importing to it as a maven project, or just from a command line. Follow these steps for the command-line option:  
