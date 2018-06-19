@@ -17,17 +17,16 @@ Besides these two primary end-points, there are few other end-points to support 
 5. GET /passengers
 6. GET /passengers/{passenger-id}
 
-To test these end-points, see the API documentation section [here](#API-Documentation-and-Integration-Testing)
+To test these end-points, see the API documentation section [here](#api-doc)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The source code can be checked out to your local and then build and run the application either from your IDE after importing to it as a maven project, or just from a command line. Follow these steps for the command-line option:  
 
 ### Prerequisites
 1. Java 8
 2. Maven 3
-
-[API Documentation (Swagger)]
+3. Git
 
 
 ### Installing & Running
@@ -47,9 +46,24 @@ These instructions will get you a copy of the project up and running on your loc
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
     12. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
 
-### API Documentation and Integration Testing
+### <a name="api-doc"></a> API Documentation and Integration Testing
 
 API documentation can be accessed via [Swagger UI](http://localhost:8080/swagger-ui.html) 
+
+## Running the Test Cases
+
+There is just one test case for this project as of now:
+[BookingTest.java](test/java/com/dxbair/services/flightbooking/test/BookingTest.java)
+
+You can run it either from:
+
+- Command line
+
+	mvn test
+	
+- Your IDE
+
+	Right click on this file and "Run As JUnit Testcase"  
 
 
 
