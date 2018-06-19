@@ -89,9 +89,9 @@ mvn test
 
 This application is using H2 in-memory database, which (database as well as data) will be removed from memory when the application goes down.
 
-While the application is running, you can access the [H2 Console](http://localhost:8080/console). 
+While the application is running, you can access the [H2 Console](http://localhost:8080/console) if you want to see the data outside the application. 
 
-You can connect to the DB using the JDBC URL: 'jdbc:h2:mem:flight-booking' and user 'sa' with NO password, if you want to see the data outside the application. 
+You can connect to the DB using the JDBC URL: 'jdbc:h2:mem:flight-booking' and user 'sa' with NO password. 
 
 
 ## Data pre-loading
