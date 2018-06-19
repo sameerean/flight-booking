@@ -41,19 +41,26 @@ The source code can be checked out to your local and then build and run the appl
 
 - Clone this repo to your local: 
 	
+	```
     git clone https://sameerean@bitbucket.org/sameerean/flight-booking.git
+    ```
 
 -  Build using maven 
-
+	
+	```
 	mvn clean install
+	```
 - Start the app
-
+	
+	```
 	mvn spring-boot:run
+	```
 - Test the URLs
-
+	
+	```
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
     12. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
-
+	```
 ## API Documentation and Integration Testing 
 
 API documentation can be accessed via [Swagger UI](http://localhost:8080/swagger-ui.html) 
