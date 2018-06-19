@@ -65,7 +65,7 @@ You can run it either from:
 
 	Right click on this file and "Run As JUnit Testcase"  
 
-## Database and data pre-loading
+## Database
 
 This application is using H2 in-memory database, which (database as well as data) will be removed from memory when the application goes down.
 
