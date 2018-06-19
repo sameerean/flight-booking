@@ -53,7 +53,7 @@ API documentation can be accessed via [Swagger UI](http://localhost:8080/swagger
 ## Running the Test Cases
 
 There is just one test case for this project as of now:
-[BookingTest.java](/test/java/com/dxbair/services/flightbooking/test/BookingTest.java)
+[BookingTest.java](src/master/src/test/java/com/dxbair/services/flightbooking/test/BookingTest.java)
 
 You can run it either from:
 
