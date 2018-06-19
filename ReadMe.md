@@ -50,11 +50,13 @@ The source code can be checked out to your local and then build and run the appl
 	```
 	mvn clean install
 	```
+	
 - Start the app
 	
 	```
 	mvn spring-boot:run
 	```
+	
 - Test the URLs
 	
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
