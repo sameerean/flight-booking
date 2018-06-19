@@ -46,14 +46,14 @@ The source code can be checked out to your local and then build and run the appl
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
     12. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
 
-### <a name="api-doc"></a> API Documentation and Integration Testing
+### <a name="api-doc">API Documentation and Integration Testing</a> 
 
 API documentation can be accessed via [Swagger UI](http://localhost:8080/swagger-ui.html) 
 
 ## Running the Test Cases
 
 There is just one test case for this project as of now:
-[BookingTest.java](test/java/com/dxbair/services/flightbooking/test/BookingTest.java)
+[BookingTest.java](/test/java/com/dxbair/services/flightbooking/test/BookingTest.java)
 
 You can run it either from:
 
