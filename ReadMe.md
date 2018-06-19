@@ -39,23 +39,23 @@ The source code can be checked out to your local and then build and run the appl
 
 ### Installing & Running
 
-#### Clone this repo to your local: 
+#### Clone this repo into your local: 
 	
-	```
+    ```
     git clone https://sameerean@bitbucket.org/sameerean/flight-booking.git
     ```
 
 ####  Build using maven 
 	
-	```
-	mvn clean install
-	```
+    ```
+    mvn clean install
+    ```
 	
 #### Start the app
 	
-	```
-	mvn spring-boot:run
-	```
+    ```
+    mvn spring-boot:run
+    ```
 	
 #### Access the Home screen
 
