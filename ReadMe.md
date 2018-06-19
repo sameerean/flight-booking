@@ -59,7 +59,7 @@ The source code can be checked out to your local and then build and run the appl
 	
 	```
     1. [http://localhost:8080/bookings?uid=PS-10](http://localhost:8080/bookings?uid=PS-10)
-    12. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
+    2. [http://localhost:8080/bookings/FB-10](http://localhost:8080/bookings/FB-10)
 	```
 ## API Documentation and Integration Testing 
 
@@ -74,8 +74,10 @@ You can run it either from:
 
 - Command line
 
-	mvn test
-	
+```
+mvn test
+```
+
 - Your IDE
 
 	Right click on this file and "Run As JUnit Testcase"  
