@@ -1,9 +1,12 @@
 package com.dxbair.services.flightbooking.booking;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,6 +113,36 @@ public class BookingServiceImpl implements BookingService {
 		if (nextFlight != null) {
 			flightRepo.save(nextFlight);
 		}
+	}
+
+	@Override
+	public List<FlightBooking> getAllMultiFlightBookingsByPassenger(String passengerId) {
+		List<FlightBooking> bookings = bookingRepo.findByPassengerId(passengerId);
+		return bookings.stream().filter(booking -> booking.getFlights().size() > 1).collect(Collectors.toList());
+
+		/*
+		final List<FlightBooking> filteredList = new ArrayList<>();
+		if (CollectionUtils.isEmpty(bookings))
+			return Collections.EMPTY_LIST;
+		
+		bookings.stream().forEach(booking -> {
+			if(booking.getFlights().size() > 1) {
+				filteredList.add(booking);
+			}
+		});
+		
+		return filteredList;
+*/	}
+
+	@Override
+	public List<FlightBooking> getAllMultiFlightBookings() {
+		List<FlightBooking> bookings = bookingRepo.findAll();
+		
+		/*if (CollectionUtils.isEmpty(bookings))
+			return Collections.EMPTY_LIST;
+		
+		bookings.stream().forEach(action);*/
+		return bookings;
 	}
 
 }

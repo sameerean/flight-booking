@@ -81,6 +81,25 @@ public class BookingTest {
 	}
 
 	@Test
+	public void getMultiBookingsByValidPassengerId_OK() {
+
+		String passengerId = "PS-4";
+
+		ResponseEntity<FlightBookingSummaryModel[]> bookingResponse = restTemplate
+				.getForEntity(ApiUrls.BookingsURL + passengerId + "&multi-flights=true", FlightBookingSummaryModel[].class);
+
+		Assertions.assertThat(bookingResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
+		Assertions.assertThat(bookingResponse.getBody()).isNotNull();
+		Assertions.assertThat(bookingResponse.getBody().length).isGreaterThan(0);
+		Assertions.assertThat(bookingResponse.getBody()[0].getBookingId()).isNotEmpty();
+
+		logger.info("\n=============================\n\n");
+		logger.info(">>>>>>>>>>>>>>>>>>>>Response = " + bookingResponse.getBody());
+		logger.info("\n\n=============================\n");
+
+	}
+
+	@Test
 	public void getBookingsByInValidPassengerId_NOT_FOUND() {
 
 		String passengerId = "ABC-5";
